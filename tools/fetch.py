@@ -22,8 +22,8 @@ with MPRester(API_KEY) as mpr:
 				try:
 					directory = f"data/{material.material_id}"
 					os.makedirs(directory, exist_ok=True)
-					chg_density.write_file(f"{directory}/{material.material_id}_CHGCAR.txt")
-					chg_density.structure.to(fmt="poscar", filename= f"{directory}/{material.material_id}_POSCAR.txt")
+					chg_density.write_file(f"{directory}/CHGCAR")
+					chg_density.structure.to(fmt="poscar", filename= f"{directory}/POSCAR")
 					print(f"Saved Charge Density files for {material.material_id}")
 				except Exception as e:
 					print(f"An error occurred while writing the files for {directory}: {e}")
